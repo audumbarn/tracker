@@ -4,6 +4,7 @@ import com.test.tracker.domain.Booking;
 import com.test.tracker.vo.BookingDetails;
 
 public interface BookingService {
-    Booking book(BookingDetails bookingDetails);
+    Booking book(BookingDetails bookingDetails) throws Exception;
 
+    Booking updateBooking(Booking booking) throws Exception;
 }

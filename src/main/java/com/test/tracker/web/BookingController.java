@@ -5,6 +5,7 @@ import com.test.tracker.service.BookingService;
 import com.test.tracker.vo.BookingDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +16,13 @@ public class BookingController {
     private BookingService bookingService;
 
     @PostMapping("/book")
-    Booking bookCab(@RequestBody BookingDetails bookingDetails) {
+    Booking bookTrip(@RequestBody BookingDetails bookingDetails) throws Exception {
         return bookingService.book(bookingDetails);
+    }
+
+    @PutMapping("/book/updateTrip")
+    Booking updateTrip (@RequestBody Booking booking) throws Exception {
+        return bookingService.updateBooking(booking);
     }
 
 }
