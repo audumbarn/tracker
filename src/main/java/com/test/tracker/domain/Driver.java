@@ -20,6 +20,7 @@ public class Driver extends User{
     @OneToMany(mappedBy = "driver")
     private List<Booking> bookings;
 
+    @Enumerated(EnumType.STRING)
     private DriverStatus status;
 
     @Embedded
