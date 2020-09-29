@@ -16,6 +16,4 @@ public class Customer extends User{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Booking> bookings;
 }

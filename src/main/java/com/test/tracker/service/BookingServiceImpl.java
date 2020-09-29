@@ -67,7 +67,7 @@ public class BookingServiceImpl implements BookingService {
      */
     @Override
     public synchronized Booking updateBooking(Booking booking) throws BookingNotFoundException {
-        if (COMPLETED.equals(booking.getStatus())) {
+         if (COMPLETED.equals(booking.getStatus())) {
             Booking b = bookingRepository.findById(booking.getId()).orElseThrow(BookingNotFoundException::new);
 
             b.setStatus(COMPLETED);
